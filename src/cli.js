@@ -5,18 +5,18 @@ const greetingWelcome = () => {
 };
 
 const greetingUser = (userName) => {
-    console.log(`Hello, ${userName}!`);
-  };
-  
-  const getUserName = () => readlineSync.question('May I have your name? ');
-  
-  const greeting = () => {
-    greetingWelcome();
-  
-    const name = getUserName();
-    greetingUser(name);
-  
-    return name;
-  };
-  
-  export default greeting;
+  console.log(`Hello, ${userName}!`);
+};
+
+const getUserName = () => readlineSync.question('May I have your name? ');
+
+const greeting = () => {
+  greetingWelcome();
+
+  const name = getUserName();
+  greetingUser(name);
+
+  return name;
+};
+
+export default greeting;
