@@ -3,8 +3,11 @@ import readlineSync from 'readline-sync';
 
 const getUserAnswer = () => readlineSync.question('Your answer: ');
 export const gcdRules = 'Find the greatest common divisor of given numbers.';
-const getNumber = () => {
-    return Math.floor(Math.random() * 100);
+
+function getRandomInt(min, max) {
+    const minCeiled = Math.ceil(min);
+    const maxFloored = Math.floor(max);
+    return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled); // The maximum is exclusive and the minimum is inclusive
 };
 
 const findGcd = (number1, number2) => {
@@ -20,8 +23,8 @@ const findGcd = (number1, number2) => {
 };
 
 const gcd = () => {
-    const firstNumber = getNumber();
-    const secondNumber = getNumber();
+    const firstNumber = getRandomInt(1, 100);
+    const secondNumber = getRandomInt(1, 100);
     console.log(`Question: ${firstNumber} ${secondNumber}`);
     const correctAnswer = findGcd(firstNumber, secondNumber);
     const userAnswer = parseInt(getUserAnswer());
